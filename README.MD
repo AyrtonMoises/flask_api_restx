@@ -1,12 +1,18 @@
 
-Crie seu ambiente virtual:
+### Crie seu ambiente virtual:
+```
 python3 -m venv venv
+```
 
-Ativar ambiente
+### Ativar ambiente
+```
 source venv/bin/activate
+```
 
-Iniciar API 
+### Iniciar API
+```
 python app.py
+```
 
-URL:
-http://localhost:5000/api/doc
+### URL:
+[http://localhost:5000/api/doc]
