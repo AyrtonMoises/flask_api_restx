@@ -12,10 +12,10 @@ class BookModel(db.Model):
         self.title = title
         self.pages = pages
 
-    def __repr__(self,):
+    def __repr__(self):
         return f'Bookmodel(title={self.title}, pages={self.pages})'
 
-    def json(self,):
+    def json(self):
         return {
             'title': self.title,
             'pages': self.pages
@@ -33,7 +33,7 @@ class BookModel(db.Model):
     def find_all(cls):
         return cls.query.all()
 
-    def save_to_db(self,):
+    def save_to_db(self):
         db.session.add(self)
         db.session.commit()
 

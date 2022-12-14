@@ -1,8 +1,8 @@
 from ma import ma
 from db import db
+from server.instance import server
 from controllers.book import Book, BookList
 
-from server.instance import server
 
 api = server.api
 app = server.app
@@ -11,9 +11,6 @@ app = server.app
 def create_tables():
     db.create_all()
 
-
-api.add_resource(Book, '/books/<int:id>')
-api.add_resource(BookList, '/books')
 
 if __name__ == '__main__':
     db.init_app(app)
