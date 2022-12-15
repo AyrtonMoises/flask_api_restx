@@ -16,3 +16,8 @@ python app.py
 
 ### URL:
 [http://localhost:5000/api/doc]
+
+### Tests:
+```
+python -m pytest
+```

@@ -20,13 +20,7 @@ item = book_ns.model('Book', {
     'pages': fields.Integer(default=0)
 })
 
-item_out = book_ns.model('Book', {
-    'id': fields.Integer,
-    'title': fields.String(description='Book title'),
-    'pages': fields.Integer(default=0)
-})
 
-@book_ns.route('/<int:id>')
 @book_ns.response(404, 'Book not found')
 @book_ns.param('id', 'The book identifier')
 class Book(Resource):
@@ -64,11 +58,10 @@ class Book(Resource):
         return {'message': ITEM_NOT_FOUND}
 
 
-@book_ns.route('/')
 class BookList(Resource):
 
     @book_ns.doc('list_books')
-    @book_ns.marshal_list_with(item_out)
+    @book_ns.marshal_list_with(item)
     def get(self):
         '''List all books'''
         return book_list_schema.dump(BookModel.find_all()), 200

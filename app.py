@@ -12,6 +12,10 @@ def create_tables():
     db.create_all()
 
 
+api.add_resource(Book, '/books/<int:id>')
+api.add_resource(BookList, '/books')
+
+
 if __name__ == '__main__':
     db.init_app(app)
     ma.init_app(app)

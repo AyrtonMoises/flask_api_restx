@@ -15,7 +15,6 @@ class Server():
             doc='/doc'
         )
         self.app.register_blueprint(self.blueprint)
-
         self.app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
         self.app.config['PROPAGATE_EXCEPTIONS'] = True
         self.app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
